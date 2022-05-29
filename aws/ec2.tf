@@ -7,7 +7,6 @@ module "ec2_instance" {
   ami                  = local.ami.default
   instance_type        = local.instance_type.default
   key_name             = local.key_name.default
-  iam_instance_profile = local.iam_profile.default
   vpc_security_group_ids = ["${aws_security_group.expose_web.id}"]
   monitoring           = true
 
