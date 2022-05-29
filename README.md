@@ -8,9 +8,9 @@ This is a simple project for the University, using Docker, docker-compose, AWS, 
 
 ```bash
 cd aws
-terraform init
-terraform plan
-terraform apply
+terraform init  # to download all the needed resources used in the Terraform file
+terraform plan  # to check if the file has errors & to see the components output without creating it
+terraform apply # to create all the components
 ```
 
 ### Creating the Docker image
@@ -20,7 +20,17 @@ cd docker
 docker build . -t <USERNAME>/<IMAGE-NAME>:<TAG>
 ```
 
-### Running docker-compose
+### Running the container with the script
+
+To start the image:
+```bash
+cd aws
+./run.sh
+```
+
+### Running the container without the script
+
+First we need to go inside the `aws` folder.
 
 To start the image:
 ```bash
